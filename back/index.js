@@ -18,7 +18,11 @@ app.use(allowCrossDomain)
 /***************************************Modules**************************************/
 
 const Converter = require('./utils/convertJSON.js');
+const ConverterXLS = require('./utils/convertXLS.js');
 var XLSX = require('xlsx');
+const fs = require('fs');
+var json2xls = require('json2xls');
+
 
 /******************************************ROUTES*************************************/
 
@@ -35,8 +39,42 @@ app.get('/questions',(req,res)=>{
 })
 
 app.post('/user',(req,res)=>{
+    console.log('ok')
     let workbook=XLSX.readFile('./data/joueurs.xlsx')
-    
+    const convert = new Converter
+    convert.convertToJSON(workbook,function(data) {
+        const convertxls = new ConverterXLS
+        convertxls.convertToXlsUser(data,req.body.nom,req.body.result,function(datapushed) {
+            var xls = json2xls(datapushed);
+            fs.writeFileSync('./data/joueurs.xlsx', xls, 'binary', (err) => {
+                if (err) {
+                        console.log("writeFileSync :", err);
+                }
+                console.log( "./data/joueurs.xlsx file is saved!");
+            });
+            res.send(data)
+        })
+    })
+
+})
+
+app.post('/stats',(req,res)=>{
+    let workbook=XLSX.readFile('./data/stats.xlsx')
+    const convert = new Converter
+    convert.convertToJSON(workbook,function(data) {
+        const convertxls = new ConverterXLS
+        convertxls.convertToXlsStat(data,req.body.nom,req.body.questions,req.body.result,function(datapushed) {
+            var xls = json2xls(datapushed);
+            fs.writeFileSync('./data/stats.xlsx', xls, 'binary', (err) => {
+                if (err) {
+                        console.log("writeFileSync :", err);
+                }
+                console.log( "./data/stats.xlsx file is saved!");
+            });
+            res.send(data)
+        })
+    })
+
 })
 
 /******************************************LISTEN*************************************/

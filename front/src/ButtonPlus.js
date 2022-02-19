@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import axios from 'axios'
 
 
 
@@ -44,12 +45,24 @@ class ButtonPlus extends Component {
   }
 
 
-  Add() {
-      this.setState({ numPlayer: this.state.numPlayer + 1 });
-    }
-  Remove() {
-      this.setState({ numPlayer: this.state.numPlayer - 1 });
-    }
+Add() {
+    this.setState({ numPlayer: this.state.numPlayer + 1 });
+  }
+Remove() {
+    this.setState({ numPlayer: this.state.numPlayer - 1 });
+  }
+
+  
+Start(){
+  console.log('yes')
+  /*
+  axios.post("http://localhost:4000/user",{nom : "ben",result : "Victoire"}).then(res=>{
+    console.log('ok')
+  })
+  */
+}
+
+  
 
   render() {
 
@@ -91,7 +104,7 @@ class ButtonPlus extends Component {
     
     {(this.state.numPlayer > 0) && <div>
     <br/>
-    <StyleButtonCommencer>
+    <StyleButtonCommencer onClick={()=>this.Start()}>
     Commencer
     </StyleButtonCommencer> </div>}
     </div>
