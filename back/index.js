@@ -59,6 +59,7 @@ app.post('/user',(req,res)=>{
 })
 
 app.post('/stats',(req,res)=>{
+    console.log('hey')
     let workbook=XLSX.readFile('./data/stats.xlsx')
     const convert = new Converter
     convert.convertToJSON(workbook,function(data) {

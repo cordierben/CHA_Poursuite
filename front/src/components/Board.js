@@ -1,15 +1,18 @@
 import React, { Component } from "react";
-import "./Board.css";
+import "../style/Board.css";
+import Result from "./Result";
 
 
-class Board extends Component {
-    
-  render() {
+function Board(props) {
+
+  
+
+  console.log("here")
   return (
-    <div class = "board">
+    <div class="board">
+      
     </div>
   )
-  }
 }
 
 export default Board;

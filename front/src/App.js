@@ -5,10 +5,11 @@ import Board from "./components/Board.js";
 class App extends Component {
   
   
+
   render() {
     return (
       <div>
-        <Board />
+        <Board/>
       </div>
     );
   }
