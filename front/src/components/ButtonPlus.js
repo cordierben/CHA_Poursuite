@@ -39,78 +39,76 @@ class ButtonPlus extends Component {
   constructor() {
     super();
     this.state = {
-      numPlayer : 0,
-      numMaxPlayer : 4
+      numPlayer: 0,
+      numMaxPlayer: 4
     }
   }
 
 
-Add() {
+  Add() {
     this.setState({ numPlayer: this.state.numPlayer + 1 });
   }
-Remove() {
+
+  Remove() {
     this.setState({ numPlayer: this.state.numPlayer - 1 });
   }
 
-  
-Start(){
-  console.log('yes')
-  /*
-  axios.post("http://localhost:4000/user",{nom : "ben",result : "Victoire"}).then(res=>{
-    console.log('ok')
-  })
-  */
-}
+  Start() {
+    console.log('yes')
+    /*
+    axios.post("http://localhost:4000/user",{nom : "ben",result : "Victoire"}).then(res=>{
+      console.log('ok')
+    })
+    */
+  }
 
-  
+
 
   render() {
 
-    
+
 
     var arrayButtons = [];
     var arrayAdd = [];
 
-    for (var i = 0; i < this.state.numMaxPlayer - this.state.numPlayer; i++) 
-    {
+    for (var i = 0; i < this.state.numMaxPlayer - this.state.numPlayer; i++) {
       arrayButtons.push(
         <div>
-        <StyleButtonPlus onClick={() => this.Add()}>
-        +
-        </StyleButtonPlus>
+          <StyleButtonPlus onClick={() => this.Add()}>
+            +
+          </StyleButtonPlus>
         </div>
       );
     }
-    for (i = 0; i < this.state.numPlayer; i++) 
-    {
-      
+    for (i = 0; i < this.state.numPlayer; i++) {
+
       arrayAdd.push(
         <div>
-        <input
-              placeholder="Nom du joueur"
-            />
+          <input
+            placeholder="Nom du joueur"
+          />
 
-        <StyleButtonSupp onClick={() => this.Remove()}>
-        Supprimer
-        </StyleButtonSupp>
+          <StyleButtonSupp onClick={() => this.Remove()}>
+            Supprimer
+          </StyleButtonSupp>
         </div>
       );
     }
 
     return (
-    <div>
-    {arrayAdd}
-    {arrayButtons}
-    
-    {(this.state.numPlayer > 0) && <div>
-    <br/>
-    <StyleButtonCommencer onClick={()=>this.Start()}>
-    Commencer
-    </StyleButtonCommencer> </div>}
-    </div>
+      <div>
+        {arrayAdd}
+        {arrayButtons}
+
+        {(this.state.numPlayer > 0) && <div>
+          <br />
+          <StyleButtonCommencer onClick={() => this.Start()}>
+            Commencer
+          </StyleButtonCommencer> </div>}
+      </div>
 
     );
   }
 }
-  
+
 export default ButtonPlus;

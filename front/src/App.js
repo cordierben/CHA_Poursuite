@@ -1,6 +1,5 @@
-
 import React, { Component } from "react";
-import ButtonPlus from "./ButtonPlus";
+import ButtonPlus from "./components/ButtonPlus";
 
 class App extends Component {
   

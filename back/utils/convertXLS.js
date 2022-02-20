@@ -9,9 +9,9 @@ class convertXLS{
         data.forEach(element => {
             if(element["Nom"]==nom){
                 count=count+1
-                element["Parties"] = element["Parties"]+1
-                if(win=="Victoire") element["Victoires"] = element["Victoires"]+1
-                else element["Défaites"] = element["Défaites"]+1
+                element["Parties"] = parseInt(element["Parties"])+1
+                if(win=="Victoire") element["Victoires"] = parseInt(element["Victoires"])+1
+                else element["Défaites"] = parseInt(element["Défaites"])+1
             }
         });
         if(count==0){
@@ -44,8 +44,8 @@ class convertXLS{
         data.forEach(element => {
             if(element["Nom"]==nom && element["Questions"]==question){
                 count=count+1
-                if(result=="Correct") element["Correct"] = element["Correct"]+1
-                else element["Erreur"] = element["Erreur"]+1
+                if(result=="Correct") element["Correct"] = parseInt(element["Correct"])+1
+                else element["Erreur"] = parseInt(element["Erreur"])+1
             }
         });
         if(count==0){
