@@ -1,0 +1,9 @@
+.board {
+  background-color: rgb(76, 29, 107);
+  background-image: url('/images/PlateauHopital4.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 97vh;
+    width: 99vW;
+  }

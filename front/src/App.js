@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
-import ButtonPlus from "./ButtonPlus";
+import Home from "./Home.js";
+import Board from "./Board.js";
 
 class App extends Component {
   
@@ -8,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ButtonPlus />
+        <Board />
       </div>
     );
   }
