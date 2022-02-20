@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import Home from "./Home.js";
 import Board from "./Board.js";
