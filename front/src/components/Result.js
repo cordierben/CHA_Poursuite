@@ -13,6 +13,14 @@ function Result(props) {
     const winner = props.winner
     const results = new Map(Object.entries(map))
 
+    function savePlayers(){
+        for (const [player, value] of results.entries()) {
+            let resultStatus = "Défaite"
+            if(player==winner) resultStatus = "Victoire"
+            axios.post("http://localhost:4000/stats",{nom:player,result:resultStatus})
+        }
+    }
+
     function saveResult(){
         for (const [player, value] of results.entries()) {
             let questions = new Map(Object.entries(results.get(player)))
@@ -25,6 +33,7 @@ function Result(props) {
     }
 
     saveResult()
+    savePlayers()
 
     return (
         <div id="mainResultDiv">
