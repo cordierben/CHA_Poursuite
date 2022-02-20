@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Home from "./Home.js";
-import Board from "./Board.js";
+import Home from "./components/Home.js";
+import Board from "./components/Board.js";
 
 class App extends Component {
   
