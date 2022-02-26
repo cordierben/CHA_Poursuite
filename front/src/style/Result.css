@@ -1,0 +1,94 @@
+#mainResultDiv {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url(../images/background.jpg);
+}
+
+#results {
+    text-align: center;
+}
+
+#resultsTitle {
+    font-family: 'LuckiestGuy-Regular';
+    font-size: 400%;
+    background: linear-gradient( to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#playerItem {
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+.playerPosition {
+    font-family: 'LuckiestGuy-Regular';
+    font-size: 250%;
+    margin-left: 15%;
+    margin-right: 3%;
+}
+
+#playerPosition1 {
+    color: #cfbb08;
+}
+
+#playerPosition2 {
+    color: #7e7d7a;
+}
+
+#playerPosition3 {
+    color: #966019;
+}
+
+#playerPosition4 {
+    color: #522c00;
+}
+
+#mainResultItemDiv {
+    width: 50%;
+    display: inline-flex;
+    border: 3px solid white;
+    background-color: cornflowerblue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+
+#mainResultItemDiv img {
+    width: 15%;
+    height: 99%;
+    border-radius: 50%;
+    margin-left: 2%;
+}
+
+#rightansw,
+#wrongansw,
+#playerName {
+    margin-left: 10%;
+    font-size: 200%;
+    color: white;
+    margin-top: 5%;
+}
+
+#playerName {
+    background: linear-gradient( to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#buttonNewGame {
+    background-color: black;
+    float: right;
+    color: white;
+    margin-right: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 20px;
+}
+
+
+/**********************************FONTS*************************************/
+
+@font-face {
+    font-family: 'LuckiestGuy-Regular';
+    src: local('LuckiestGuy-Regular'), url(../fonts/LuckiestGuy-Regular.ttf) format('truetype');
+}
